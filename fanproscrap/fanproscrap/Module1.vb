@@ -20,7 +20,7 @@ Module Module1
         'Try Catch Error Check 
         Try
             'var declare url 
-            Dim strURL As String = "http://zpower-intranet"
+            Dim strURL As String = "https://www.google.com/"
             'Inst HtmlDocument Class from htmlagilitypack lib
             Dim htmlDoc = New HtmlDocument()
             'empty var this will be to store html markup string
@@ -42,8 +42,8 @@ Module Module1
                 'load markup body stream
                 htmlDoc.LoadHtml(strOutput)
                 'Scape needed Content from html doc
-                Dim form = htmlDoc.DocumentNode.SelectSingleNode("//div")
-                Console.WriteLine(form.ToString)
+                Dim form = htmlDoc.DocumentNode.SelectSingleNode("//form")
+                Console.WriteLine(form.InnerHtml.ToString)
                 'For Each r As HtmlNode In htmlDoc.DocumentNode.SelectNodes("//table//tr")
                 '    For Each c As HtmlNode In r.SelectNodes("td")
                 '        Console.WriteLine(c.InnerText.ToString)
